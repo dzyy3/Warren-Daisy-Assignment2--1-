@@ -281,7 +281,10 @@
     width: 30%;
     min-width: 200px;
   }
-    
+  
+  .gallery-item2 img {
+    width: 80%;
+  }
 
 /* Smartphones: less than 600px */
 @media (max-width: 599px) {
@@ -306,8 +309,7 @@
     display: none; 
   }
 
-  .gallery-item,
-  .gallery-item2 {
+  .gallery-item {
     width: 100%;
     float: none;
     margin: 10px 0;
@@ -339,8 +341,7 @@
     display: none; 
   }
 
-  .gallery-item,
-  .gallery-item2 {
+  .gallery-item {
     width: 45%;
     float: left;
     margin: 10px;
@@ -371,8 +372,7 @@
     position: fixed;
   }
 
-  .gallery-item,
-  .gallery-item2 {
+  .gallery-item {
     width: 30%;
   }
 
