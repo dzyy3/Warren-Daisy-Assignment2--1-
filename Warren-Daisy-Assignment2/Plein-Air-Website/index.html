@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- You were mostly able to fix the issues concerning the various easels. Some of the HTML and CSS is well coded, so good work there! There are notes in each document and in the stylesheet on various issues that need to be resolved. -->
+
+<!-- This document has some errors, which are noted below. Remember to run your HTML documents through the W3C HTML Validator to help you find and fix any errors. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plein Air Club</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body>
+    <header>
+        <!-- Since the 'headerPAC' class has been commented out in the style sheet there is no purpose in assigning it to an element. -->
+        <span class="headerPAC">Plein Air Club</span><!-- See the skipping headings note attached to the <h2> below. -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Events/pastEvents.html">Past Events</a>
+            <a href="About/about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Daisy Note: Using a section so the image and the content in main don't overlap when the window gets smaller --> 
+     <!-- The problem with that approach is that it produces a semantic error that is flagged as a warning by the W3C HTML Validator. The purpose of the <section> element is to divide its parent container into multiple sections. Also, <section>s should always open with a heading, with very few exceptions. The solution is to replace the <section> with the <figure> element. Then within the 'imageContainer' class style rule add the margin property set to the 0 value. Next assign the 'imageContainer' class to the <figure> element. -->
+    <main class="mainContainer">
+        <section class="imageContainer">
+            <img id="stationaryEasel" src="images/easels/easelPainted.png" alt="Plein Air Easel with painting">
+        </section>
+
+    
+        <section class="rightTextbox">
+            <!-- Skipping headings is a semantic error. An <h2> must be preceded by and sub to an <h1>. When validating your HTML, make it a practice to select the outline option. Choosing this option will display a listing of your heading levels at the bottom of the Validator's Results page, where the Validator will point out if you have skipped any heading levels. One solution is to convert the <span> within the above <header> to the <h1> element. -->
+            <h2>Welcome to the Plein Air Club</h2>
+            <p>
+                The purpose of the Plein Air Painting and Figure Drawing Club is to cultivate a community of artists and art enthusiasts dedicated to the practice and appreciation of outdoor painting (en plein air) and figure drawing.
+            </p>
+            <p>
+                Our club aims to provide members with opportunities to explore and develop their artistic skills in natural settings, capturing the beauty of landscapes and the human form.
+            </p>
+            <p>
+                We plan to host:
+            </p>
+            <ul>
+                <li>Monthly figure drawing sessions</li>
+                <li>Monthly landscape/plein air sessions</li>
+                <li>Online group chats for feedback and discussions</li>
+            </ul>
+            
+            <h3>Club Activities</h3>
+            <ol>
+                <li>Outdoor sketching sessions</li>
+                <li>Workshops with guest artists</li>
+                <li>Gallery visits</li>
+            </ol>
+            
+            <h3>Art Supplies</h3>
+            <dl>
+                <dt>Sketchbook</dt>
+                <dd>A must-have for every artist in the club</dd>
+                <dt>Watercolor set</dt>
+                <dd>Great for outdoor painting</dd>
+                <dt>Charcoal</dt>
+                <dd>Perfect for figure drawing</dd>
+            </dl>
+            
+            <h3>Gallery</h3>
+            <figure class="gallery-item">
+                <img src="images/aqarium/aquairumClubFood.jpg" alt="Club Snacks After the Meeting">
+                <figcaption>NY Aquarium - Spring 2025</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="images/figure/coffeeFigureDrawing.JPG" alt="Figure drawing session">
+                <figcaption>Figure Drawing Snacks - Fall 2024</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="images/figure/drawingSupplies.JPG" alt="Figure drawing session pencils and paints">
+                <figcaption>Figure Drawing Materials - Fall 2024</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="images/castle/paintingsCastle.png" alt="Castle painting session">
+                <figcaption>Central Park - Fall 2024</figcaption>
+            </figure>
+
+            <!-- <figure class="gallery-item">
+                <img src="images/Zoo/monkeyZoo.JPG" alt="Zoo drawing session">
+                <figcaption>Brox Zoo - Fall 2024</figcaption>
+            </figure> -->
+        </section>
+    </main>
+
+    
+    <footer>
+        <p>
+            Follow us on <a href="https://www.instagram.com/tnspleinairclub/" target="_blank">Instagram</a> | 
+            Visit our <a href="https://narwhalnation.newschool.edu/organization/pleinairclub" target="_blank">Narwhal Nation</a>
+        </p>
+    </footer>
+</body>
+</html>
