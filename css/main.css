@@ -118,7 +118,7 @@ img {
   }
   
   a:hover {
-    color: rgb(110, 110, 110);
+    color: rgb(19,56,10);
   }
   
   footer {
@@ -257,14 +257,15 @@ img {
   }
   
   a:hover {
-    color: rgb(110, 110, 110);
+    color: rgb(19,56,10);
   }
   
   footer {
     background-color: rgb(145, 201, 148);
-    color: rgb(19,56,10);
+    color: #13380a;
     text-align: right;
     bottom: 0;
+    left: 0;
     position: fixed;
     z-index: 3000;
     width: 100%;

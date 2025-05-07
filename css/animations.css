@@ -1,0 +1,26 @@
+
+:root {
+    --green-dark: rgb(19,56,10);
+    --green-light: rgb(145, 201, 148);
+}
+
+html {
+    background-color: white;
+}
+
+.fade-bgcolor {
+    color: var(--green-dark);
+    background-color: var(--green-dark);
+    animation-name: fadeColors;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeColors {
+    from {
+        background-color: var(--green-dark);
+    }
+    to {
+        background-color:var(--green-light);
+    }
+}
