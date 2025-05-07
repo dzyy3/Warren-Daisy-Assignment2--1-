@@ -1,44 +1,47 @@
-/* This style sheet has some validation errors. Remember to run your style sheets through the W3C CSS Validator to find and fix CSS errors. */ 
-
-
-/* Since images often have different dimensions, it is not a choice to set all images to the same width. If several images have the same dimensions, create a class containing the width and height that will be assigned to those images.  */
 img {
-    width: 20%;
-}
+    height: auto;
+  }
 
-@font-face {
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @font-face {
     font-family: Kunstler;
     src: url(../fonts/KUNSTLER.TTF) format("truetype");
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: Bahnschrift;
     src: url(../fonts/Bahnschrift.ttf) format("truetype");
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: Pixel;
     src: url(../fonts/Pixel.otf) format("opentype");
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: Lucine;
     src: url(../fonts/Lucine.otf) format("opentype");
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: Lucian;
     src: url(../fonts/Lucian.otf) format("opentype");
-}
-
-/* Siblings are commonly grouped. Since <html> is the ascendant of all elements, it rarely should be part of a group. Based on the majority of the CSS in the following style rule, its selector should be ungrouped by removing the 'body' selector. Then create a 'body' style rule and place it after the 'html' style rule. There are notes in the following style flagging the CSS that should be moved to the 'body' style rule. */
-body, html {
+  }
+  
+  html {
     font-family: Bahnschrift, sans-serif;
-
-    margin: auto; /* Auto margins are unneeded in this style rule. To fully understand when auto should be used read this article: https://dev.to/ritikaagrawal08/all-about-margin-auto-in-css-centering-and-more-2b2g. */
-
-    padding-top: 50px; /* Convert this property to the margin-top property, then move it to the 'body' style and change the 50px value to 100px. */
-
     background-color: #eaf1e8;
     color: black;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url(../images/backgrounds/scenicBackground.JPG);
@@ -46,263 +49,236 @@ body, html {
     background-position: center;
     background-attachment: fixed;
     overflow-x: clip;
-
-    min-height: 700px; /* Move to the 'body' style */
-}
-
-.rightTextbox {
+  }
+  
+  body {
+    margin-top: 100px;
+    min-height: 700px;
+  }
+  
+  .rightTextbox {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 50px;
     width: 60%;
     margin-left: 40%;
-}
-
-/* easel ID CSS */
-#stationaryEasel {
-    position: absolute; /* There is no need to set the targeted <img> to an absolute position. See the notes in the '.imageContainer' style rule. */
-
-    bottom: 0; /* This bottom coordinate should be moved to the '.imageContainer' style rule. */
-
-    width: 100%; /* When the width of an <img> is set to a percentage, it is a good practice to also include the <img>'s height property set to the 'auto' value. This will ensure that the <img>'s height will adjust proportionately to its varying width. */
-
-    max-height:100%;
-    max-width: 100%;
-}
-
- .mainContainer {
+  }
+  
+  .mainContainer {
     display: flex;
     width: 100%;
-}
-
-/* The following style rule should precede the above '#stationaryEasel' style rule. The order of the style rules in your style sheet is important. Style rules that target ascendent elements should precede those that target their descendants. A well organized style sheet will prevent unintended conflicts and redundancies. */
-.imageContainer {
+  }
+  
+  .imageContainer {
     position: fixed;
     width: 40%;
-
-    height: 90%; /* Because a fixed-positioned element will expand in height to hold its content, this height property is unneeded. */
-
-    /* This is where the bottom property in the above '#stationaryEasel' style rule should be placed. */
-
+    bottom: 0;
     z-index: 2000;
-}
-
-
-/* #noOverlap {
-    
-} */
-
-/* headers */
-header {
+    margin: 0;
+  }
+  
+  #stationaryEasel {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  header {
     font-family: Kunstler, sans-serif;
     background: rgb(145, 201, 148);
     color: rgb(19,56,10);
     position: fixed;
     display: flex;
-    padding: 5px 5px;
+    padding: 5px;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-
-    min-width:900px; /* This minimum is causing the branding text to overflow the right edge of the <header> on tablets and smartphones.   */
-}
-
-/* .headerPAC::first-letter {
-    float: left;
-    border: 2px red solid;
-    font-size: 100px;
-
-} */
-
-header span {
+  }
+  
+  header h1 {
     font-size: 80px;
-}
-
-/* Since the 'p' ID is not assigned to any element, the following style rule serves no purpose and should be removed. Keeping your CSS free of unnecessary style rules is a good practice. */
-#p {
-    font-size: 120px;
-}
-
-nav {
-    font-family: sans-serif;
-
-    position: fixed; /* Since the parent <header> is a flexbox, assigning a fixed position is unnecessary. When we cover flexbox CSS later in the course, you will learn how to align flex-items within a flexbox. */
-
-    right: 20px;
-    top: 50px;
-}
-
-nav a {
-    padding: 0 5px; /* Padding should not be used to create a margin or to expand upon an element's inherent margins; instead, use the margin property to set your margins. Reserve the padding for instances where an element has been assigned a background or border to offset its border box from its content box. */
-
-}
-
-
-a {
+    margin: 0;
+  }
+  
+  nav {
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  a {
     color: white;
     text-decoration: none;
-
-}
-
-a:hover {
-    color: rgb(110, 110, 110); 
-}
-
-#pastEventsHeader {
-    background: rgb(198, 165, 127);
-    color: #eaf1e8;
-    z-index: 1001;
-}
-
-#aboutHeader {
-    background: rgb(111, 191, 201);
-}
-
-/* The following style rule has the same selector as the above 'nav' style rule. It is an inefficient practice to declare a style rule utilizing the same selector more than once. Doing so will lead to repetitiveness and unintended conflicts in your CSS. Multi-declared style rules that use the same selector should be merged into one style rule. Any duplicated CSS should be removed along with any conflicts. Due to a need to override or add CSS for their targeted devices, media queries are instances where such additional declarations are acceptable. However, even within a media query there should be no multi-declarations. */
-nav {
-    align-items: left; /* Coding error: left is not a value that can be assigned to the align-items property. Additionally, the property can only be assigned to a flexbox or CSS grid. */
-    padding-left: 20px;
-
-    font-size: 30; /* Coding error: the 30 value is missing its measurement unit. */
-}
-
-footer {
+  }
+  
+  a:hover {
+    color: rgb(110, 110, 110);
+  }
+  
+  footer {
     background-color: rgb(145, 201, 148);
-    margin-bottom: 0;
-    padding-bottom: 0;
     color: rgb(19,56,10);
     text-align: right;
     bottom: 0;
-    position:fixed;
-
-    /* To ensure that the fixed positioned <footer> is on top of any non-statically positioned elements within the <main> element, assign a z-index number that is higher than the highest number that has been or will be assigned to those non-statically positioned element. */
-
+    position: fixed;
+    z-index: 3000;
     width: 100%;
-}
-
-#aboutFooter {
-    background-color: rgb(111, 191, 201);
-    color: rgb(8, 37, 41);
-}
-
-#pastEventsFooter {
-    background-color: rgba(198, 165, 127);
-    color: rgb(61, 39, 15);
-}
-
-p {
-    /* all: unset; */
-    padding-right: 15px; /* See the padding note in the above 'nav a' style rule. */
-}
-
-/* #noFooterPadding {
-    all: unset;
+  }
+  
+  footer p {
+    margin: 0;
     padding-right: 15px;
-} */
-
-#aboutLinks a {
-    color: rgb(111, 191, 201);
-}
-
-#aboutLinks a:hover {
-    color: rgb(8, 37, 41);
-}
-
-#susan {
-    font-family: inherit; /* Unnecessary since the font-family property is inheritable styling. Additionally, since this is the only CSS in this style rule, the style rule is also unnecessary and should be removed. */
-}
-
-/*  */
-#aboutLinks section {
-    /* border: red 2px solid; */
-    overflow: auto; /* Due to the potential problem that any overflow could be hidden, this method to prevent parent collapse is outdated. When a parent element has a child that is floated, assigning the the 'flow-root' value to the display property is the current method to prevent the parent from collapsing. */
-}
-
-/* I created the following style rule to show that the <figure>s that each hold a floated image is experiencing parent collapse. Also, the <figure>s are still expanding in width to fill their parent element's content box. The solution is to assign the float CSS to this style rule and remove it from the '#aboutLinks figure img' style rule.  */
-#aboutLinks figure {
-    outline: 2px solid red;
-
-    /* Also, set the width to 30%. */
-
-    /* Futhermore, see the CSS that you coded in the 'gallery-item' style rule, which would be more appropriate for this style rule. */
-}
-
-#aboutLinks figure img {
-    float: left; /* Move this CSS to the above '#aboutLinks figure' style rule.  */
-
-    padding: 10px; /* See the padding note in the above 'nav a' style rule. */
-
-    /* margin-right: 5px;
-    margin-left: 5px; */
-
-    width: 30%; /* Change this width to 100%. */
-}
-
-#daisy {
-    font-family: Pixel, sans-serif;
-}
-
-/* #daisy figure img{
-    width: 40%;
-} */
-
-#audrey {
-    font-family: Lucine, sans-serif;
-}
-
-#melissa {
-    font-family: Lucian, sans-serif;
-}
-
-/* Stop reviewing here. */
-
-/* Gallery styling index page */
-
-.gallery-item {
-
-    float: right; /* Floating items is an outdated method to create a gallery or grid. We will soon learn better ways. */
-    
-    margin: 10px 0 10px 20px; 
-    width: 30%; 
+  }
+  
+  .gallery-item {
+    float: right;
+    margin: 10px 0 10px 20px;
+    width: 30%;
     min-width: 200px;
-    max-width: 300px;
-}
-
-.gallery-item img {
-    width: 100%; 
-    border-radius: 4px;
-}
-
-.gallery-item figcaption {
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-    color: rgb(81, 102, 83);
-    margin-top: 5px;
-}
-
-/* Image styling events page & text float */
-
-.gallery-item2 {
-    float: left; 
-    margin: 40px 20px 10px 20px;
-
-    /* I added the following outline to show that the targeted <figure> is expanding in width much wider than is needed. It is also preventing the text that comes after each <figure> from wrapping around these floated items. See the solution in the next style rule. */
-    outline: 2px solid red; 
+  }
+  img {
+    height: auto;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @font-face {
+    font-family: Kunstler;
+    src: url(../fonts/KUNSTLER.TTF) format("truetype");
+  }
+  
+  @font-face {
+    font-family: Bahnschrift;
+    src: url(../fonts/Bahnschrift.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: Pixel;
+    src: url(../fonts/Pixel.otf) format("opentype");
+  }
+  
+  @font-face {
+    font-family: Lucine;
+    src: url(../fonts/Lucine.otf) format("opentype");
+  }
+  
+  @font-face {
+    font-family: Lucian;
+    src: url(../fonts/Lucian.otf) format("opentype");
+  }
+  
+  html {
+    font-family: Bahnschrift, sans-serif;
+    background-color: #eaf1e8;
+    color: black;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url(../images/backgrounds/scenicBackground.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: clip;
+  }
+  
+  body {
+    margin-top: 100px;
+    min-height: 700px;
+  }
+  
+  .rightTextbox {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    width: 60%;
+    margin-left: 40%;
+  }
+  
+  .mainContainer {
+    display: flex;
+    width: 100%;
+  }
+  
+  .imageContainer {
+    position: fixed;
+    width: 40%;
+    bottom: 0;
+    z-index: 2000;
+    margin: 0;
+  }
+  
+  #stationaryEasel {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  header {
+    font-family: Kunstler, sans-serif;
+    background: rgb(145, 201, 148);
+    color: rgb(19,56,10);
+    position: fixed;
+    display: flex;
+    padding: 5px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    font-size: 80px;
+    margin: 0;
+  }
+  
+  nav {
+    margin-left: auto;
+    padding-left: 20px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  nav a {
+    margin: 0 5px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(110, 110, 110);
+  }
+  
+  footer {
+    background-color: rgb(145, 201, 148);
+    color: rgb(19,56,10);
+    text-align: right;
+    bottom: 0;
+    position: fixed;
+    z-index: 3000;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 0;
+    padding-right: 15px;
+  }
+  
+  .gallery-item {
+    float: right;
+    margin: 10px 0 10px 20px;
+    width: 30%;
+    min-width: 200px;
+  }
     
-}
-
-.gallery-item2 img {
-    width: 60%; /* The width property and its value should be moved to the above 'gallery-item2'. Then set the targeted images to have a width of 100% and an auto height. */
-
-    border-radius: 20px;
-}
-
-.gallery-item2 figcaption {
-    font-size: 14px;
-    font-style: italic;
-    text-align: left;
-    color: rgb(61, 39, 15);
-    margin-top: 5px;
-}
